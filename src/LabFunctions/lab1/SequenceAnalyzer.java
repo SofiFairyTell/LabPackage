@@ -1,11 +1,16 @@
 package LabFunctions.lab1;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 
 /**
  * Класс для определения количества чисел меньших, равных и больших заданного числа в последовательности.
  */
 public class SequenceAnalyzer {
+
+    private static final Logger logger = LogManager.getLogger(SequenceAnalyzer.class);
 
     private static double[] sequence; // последовательность чисел
 
@@ -62,13 +67,18 @@ public class SequenceAnalyzer {
                 case 2:
                     System.out.println("Формируем новую последовательность");
                     System.out.print("Введите количество элементов в массиве: ");
-                    int n = scanner.nextInt();
-                    sequence = new double[n];
+                    int length = scanner.nextInt();
+                    if (length <= 0) {
+                        logger.error("Ошибка: длина последовательности должна быть больше 0.");
+                        throw new IllegalArgumentException("Длина последовательности должна быть больше 0.");
+                    }
+                    sequence = new double[length];
                     System.out.println("Введите элементы массива:");
-                    for (int i = 0; i < n; i++) {
+                    for (int i = 0; i < length; i++) {
                         sequence[i] = scanner.nextDouble();
                     }
                     analyzer = new SequenceAnalyzer(sequence);
+                    logger.debug("Создана последовательность длины {} со значением по умолчанию {}.", length, sequence);
                     break;
                 default:
                     System.out.println("Ошибка: некорректный номер команды!");
@@ -87,6 +97,7 @@ public class SequenceAnalyzer {
                     System.out.printf("Количество чисел меньше %f: %d\n", targetNumber, result[0]);
                     System.out.printf("Количество чисел равных %f: %d\n", targetNumber, result[1]);
                     System.out.printf("Количество чисел больших %f: %d\n", targetNumber, result[2]);
+                    logger.debug("Посчитано чисел меньше {}, равных {} и больших {} в последовательности длины {}.", result[0], result[1], result[2], sequence.length);
                     break;
                 case 0:
                     System.out.println("Выход из программы...");
