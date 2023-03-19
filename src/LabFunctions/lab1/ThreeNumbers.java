@@ -1,5 +1,7 @@
 package LabFunctions.lab1;
 
+import LabFunctions.lab2.LoggerClass;
+
 import java.util.Scanner;
 
 /**
@@ -34,10 +36,11 @@ public class ThreeNumbers {
     private static void checkNumbers(int a, int b, int c) {
         ThreeNumbers tn = new ThreeNumbers(a, b, c);
 
+        LoggerClass logger = new LoggerClass();
         if (tn.hasPositiveSum()) {
-            System.out.println("Сумма каких-либо двух чисел является положительной.");
+            logger.logInfo("Сумма каких-либо двух чисел является положительной.");
         } else {
-            System.out.println("Сумма каких-либо двух чисел не является положительной.");
+            logger.logWarning("Сумма каких-либо двух чисел не является положительной.");
         }
     }
 
