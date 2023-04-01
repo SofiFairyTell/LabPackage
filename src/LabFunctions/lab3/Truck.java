@@ -12,7 +12,7 @@ public class Truck extends Transport {
     private int payload;
     private boolean hasTrailer;
 
-    public Truck(String brand, String number, int speed, int loadCapacity, boolean hasTrailer) {
+    public Truck(String brand, String number, double speed, int loadCapacity, boolean hasTrailer) {
         this.brand = brand;
         this.number = number;
         this.speed = speed;

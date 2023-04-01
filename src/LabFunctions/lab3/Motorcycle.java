@@ -13,7 +13,7 @@ public class Motorcycle extends Transport {
     private boolean hasSidecar;
     private int loadCapacity;
 
-    public Motorcycle(String brand, String number, int speed, boolean hasSidecar) {
+    public Motorcycle(String brand, String number, double speed, boolean hasSidecar) {
         this.brand = brand;
         this.number = number;
         this.speed = speed;
