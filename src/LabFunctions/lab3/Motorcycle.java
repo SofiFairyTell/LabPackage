@@ -7,20 +7,63 @@ import java.util.Scanner;
  */
 public class Motorcycle extends Transport {
     private String model;
-    private int maxSpeed;
+//    private String brand;
+//    private String number;
+//    private int speed;
+    private boolean hasSidecar;
+    private int loadCapacity;
+
+    public Motorcycle(String brand, String number, int speed, boolean hasSidecar) {
+        this.brand = brand;
+        this.number = number;
+        this.speed = speed;
+        this.hasSidecar = hasSidecar;
+        if (hasSidecar) {
+            this.loadCapacity = super.getLoadCapacity();
+        } else {
+            this.loadCapacity = 0;
+        }
+    }
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public boolean hasSidecar() {
+        return hasSidecar;
+    }
+
+    @Override
+    public int getLoadCapacity() {
+        return loadCapacity;
+    }
 
     @Override
     public void init(Scanner scanner) {
-        System.out.print("Enter the model of motorcycle: ");
-        model = scanner.nextLine();
-        System.out.print("Enter the maximum speed: ");
-        maxSpeed = scanner.nextInt();
-        System.out.print("Enter the load capacity: ");
-        loadCapacity = scanner.nextInt();
+        // считываем параметры мотоцикла с консоли
+        System.out.print("Введите марку мотоцикла: ");
+        this.brand = scanner.next();
+        System.out.print("Введите номер мотоцикла: ");
+        this.number = scanner.next();
+        System.out.print("Введите скорость мотоцикла: ");
+        this.speed = scanner.nextInt();
+        System.out.print("Наличие коляски (true/false): ");
+        this.hasSidecar = scanner.nextBoolean();
+        if (hasSidecar) {
+            this.loadCapacity = super.getLoadCapacity();
+        } else {
+            this.loadCapacity = 0;
+        }
     }
 
     @Override
     public String toString() {
-        return "Motorcycle - Model: " + model + ", Max speed: " + maxSpeed + ", Load capacity: " + loadCapacity;
+        String sidecar = hasSidecar ? "с коляской" : "без коляски";
+        return String.format("%s, номер %s, скорость %d км/ч, %s, грузоподъемность %d кг",
+                brand, number, speed, sidecar, loadCapacity);
     }
 }

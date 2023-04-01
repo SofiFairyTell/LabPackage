@@ -39,10 +39,6 @@ public class PassengerCar extends Transport {
         this.number = number;
     }
 
-    public double getSpeed() {
-        return speed;
-    }
-
     public void setSpeed(double speed) {
         this.speed = speed;
     }
