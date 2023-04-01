@@ -53,16 +53,16 @@ public class PassengerCar extends Transport {
 
     @Override
     public void init(Scanner scanner) {
-        System.out.print("Enter the model of passenger car: ");
+        System.out.print("Введите модель автомобиля: ");
         model = scanner.nextLine();
-        System.out.print("Enter the number of seats: ");
+        System.out.print("Введите количество мест: ");
         seats = scanner.nextInt();
-        System.out.print("Enter the load capacity: ");
+        System.out.print("Введите грузоподъемость: ");
         loadCapacity = scanner.nextInt();
     }
 
     @Override
     public String toString() {
-        return "Passenger car - Model: " + model + ", Seats: " + seats + ", Load capacity: " + loadCapacity;
+        return "Автомобиль - Модель: " + model + ", Мест: " + seats + ", Грузоподъемность: " + loadCapacity;
     }
 }

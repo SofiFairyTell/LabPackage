@@ -9,7 +9,6 @@ import java.util.Scanner;
  */
 public class Truck extends Transport {
     private String model;
-    private int payload;
     private boolean hasTrailer;
 
     public Truck(String brand, String number, double speed, int loadCapacity, boolean hasTrailer) {
@@ -25,10 +24,10 @@ public class Truck extends Transport {
     }
     @Override
     public void init(Scanner scanner) {
-        System.out.print("Enter the model of truck: ");
+        System.out.print("Введите модель грузовика: ");
         model = scanner.nextLine();
-        System.out.print("Enter the payload: ");
-        payload = scanner.nextInt();
+        System.out.print("Введите номер ");
+        number = scanner.nextLine();
         System.out.print("Enter the load capacity: ");
         loadCapacity = scanner.nextInt();
     }
@@ -47,7 +46,7 @@ public class Truck extends Transport {
 
     @Override
     public String toString() {
-        return "Truck: " + brand + ", " + number + ", " + speed + " km/h, load capacity: " + loadCapacity + " kg, has trailer: " + hasTrailer;
+        return "Грузовик: " + brand + ", " + number + ", " + speed + " km/h, грузоподъемность: " + loadCapacity + " kg, есть прицеп: " + hasTrailer;
     }
 
 }

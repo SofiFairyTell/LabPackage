@@ -46,11 +46,11 @@ public class Motorcycle extends Transport {
     public void init(Scanner scanner) {
         // считываем параметры мотоцикла с консоли
         System.out.print("Введите марку мотоцикла: ");
-        this.brand = scanner.next();
+        this.brand = scanner.nextLine();
         System.out.print("Введите номер мотоцикла: ");
-        this.number = scanner.next();
+        this.number = scanner.nextLine();
         System.out.print("Введите скорость мотоцикла: ");
-        this.speed = scanner.nextInt();
+        this.speed = scanner.nextDouble();
         System.out.print("Наличие коляски (true/false): ");
         this.hasSidecar = scanner.nextBoolean();
         if (hasSidecar) {
