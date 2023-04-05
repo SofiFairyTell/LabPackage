@@ -2,7 +2,9 @@ package LabFunctions.lab4;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-
+/**
+ * Класс для проверки правильности введенного имени и фамилии. Содержит соответствующие функции
+ */
 public class NameValidator {
     // Регулярное выражение для проверки Фамилии
     private static final String SURNAME_PATTERN = "^([А-ЯЁа-яё]+-?[А-ЯЁа-яё]*)|([A-Za-z]+-?[A-Za-z]*)$";
