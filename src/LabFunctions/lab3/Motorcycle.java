@@ -54,7 +54,8 @@ public class Motorcycle extends Transport {
         System.out.print("Наличие коляски (true/false): ");
         this.hasSidecar = scanner.nextBoolean();
         if (hasSidecar) {
-            this.loadCapacity = super.getLoadCapacity();
+            System.out.print("Введите грузоподъемность мотоцикла: ");
+            this.loadCapacity = scanner.nextInt();
         } else {
             this.loadCapacity = 0;
         }
@@ -63,7 +64,9 @@ public class Motorcycle extends Transport {
     @Override
     public String toString() {
         String sidecar = hasSidecar ? "с коляской" : "без коляски";
-        return String.format("%s, номер %s, скорость %d км/ч, %s, грузоподъемность %d кг",
-                brand, number, speed, sidecar, loadCapacity);
+//        return String.format("%s, номер %s, скорость %02d км/ч, %s, грузоподъемность %05d кг",
+//                brand, number, speed, sidecar, loadCapacity);
+        return "Мотоцикл - Модель: " + brand + ", Номер: " + number +", Скорость: "+ speed +", " + sidecar
+                + ", Грузоподъемность: " + loadCapacity;
     }
 }
