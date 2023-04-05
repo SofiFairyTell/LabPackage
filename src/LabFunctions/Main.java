@@ -5,16 +5,16 @@ import LabFunctions.lab3.Motorcycle;
 import LabFunctions.lab3.PassengerCar;
 import LabFunctions.lab3.Transport;
 import LabFunctions.lab3.Truck;
+import LabFunctions.lab4.NameValidator;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.print("Лабораторные функции загружены!");
+        //System.out.print("Лабораторные функции загружены!");
         //ThreeNumbers.MenuCheckNumbers();
-        readTransport();
+        //readTransport();
     }
-
 
     /**
      * Считывает количество транспортных средств с консоли
