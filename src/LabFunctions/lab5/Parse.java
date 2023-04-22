@@ -1,6 +1,5 @@
 package LabFunctions.lab5;
 
-import java.sql.ResultSet;
 import java.util.ArrayList;
 public class Parse
 {
@@ -11,8 +10,8 @@ public class Parse
         this.cityList = cities;
     }
 
-    public Parse(ArrayList<City> cities, ParseDOM parseDOM) {
-        this.cityList = cities;
+    public Parse(ArrayList<City> cityListXML, ParseDOM parseDOM) {
+        this.cityList = cityListXML;
         this.parseDOM = parseDOM;
     }
 
@@ -33,6 +32,7 @@ public class Parse
             var result = sqlOBJ.getAll();
             while (result.next()) {
                 this.cityList.add(new City(
+                        result.getInt("code"),
                         result.getString("country"),
                         result.getString("name"),
                         result.getString("mayor"),

@@ -1,6 +1,7 @@
 package LabFunctions.lab5;
 
 public class City {
+    protected int Code;
     private String country;
     private String name;
     private String mayor;
@@ -8,13 +9,19 @@ public class City {
     private double area;
     private int qualityOfLife;
 
-    public City(String country, String name, String mayor, int population, double area, int qualityOfLife) {
+    public City(int Code, String country, String name, String mayor, int population, double area, int qualityOfLife) {
+        this.Code = Code;
         this.country = country;
         this.name = name;
         this.mayor = mayor;
         this.population = population;
         this.area = area;
         this.qualityOfLife = qualityOfLife;
+    }
+
+    public int getCode()
+    {
+        return this.Code;
     }
 
     public String getCountry() {
