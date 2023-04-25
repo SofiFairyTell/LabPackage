@@ -53,7 +53,7 @@ public class Common {
                 // записываем в файл нужную строку
                 String xmlString = "<?xml version=\"1.0\" encoding=\"UTF-8\" standalone=\"no\"?>\n" +
                         "<CityLists>\n" +
-                        "    <City code=\"31\">\n" +
+                        "    <City id=\"31\">\n" +
                         "        <country>Россия</country>\n" +
                         "        <name>Белгород</name>\n" +
                         "        <mayor>Гладков</mayor>\n" +

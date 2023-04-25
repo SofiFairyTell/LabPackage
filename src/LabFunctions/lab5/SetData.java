@@ -58,7 +58,7 @@ public class SetData {
     {
         var sax = new ParseSAX();
         var cities = sax.readerSaxDocument(filePath);
-        System.out.println("Введите id события:");
+        System.out.println("Введите id города:");
         var searchId = Common.getID();
         var strings = this.setData();
         boolean flag = false;
@@ -97,7 +97,7 @@ public class SetData {
             var dom = new ParseDOM(filePath);
             dom.setDomNodes(cities);
         } else {
-            System.out.println("Такого события нет!");
+            System.out.println("Такого города нет!");
         }
     }
     public void deleteEvent(String filePath, int searchId)
@@ -117,7 +117,7 @@ public class SetData {
             var dom = new ParseDOM(filePath);
             dom.setDomNodes(events);
         } else {
-            System.out.println("Такого события нет!");
+            System.out.println("Такого города нет!");
         }
     }
 

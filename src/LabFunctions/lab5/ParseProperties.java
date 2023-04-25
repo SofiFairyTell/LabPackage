@@ -25,7 +25,8 @@ public class ParseProperties
         Properties prop = new Properties();
         try {
             //обращение к файлу и получение данных
-            FileInputStream fis = new FileInputStream(propPath);
+            InputStream fis = getClass().getResourceAsStream("/LabFunctions/lab5/settings.properties");
+            //FileInputStream fis = new FileInputStream(propPath);
             prop.load(fis);
             // взятие свойства и преобразование в необходимую кодировку
             String uri = new String(prop.getProperty("connectionUrl").getBytes("ISO8859-1"));

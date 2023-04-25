@@ -99,7 +99,7 @@ public class ParseDOM
                                  double area, int QualityOfLife)
     {
         Element language = doc.createElement("City");
-        language.setAttribute("code", Code+""); // устанавливаем атрибут id
+        language.setAttribute("id", Code+""); // устанавливаем атрибут id
         // создаем элементы name и age
         language.appendChild(getLanguageElements(doc, "country", Country));
         language.appendChild(getLanguageElements(doc, "name", Name));

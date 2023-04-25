@@ -88,7 +88,7 @@ public class Main {
                         try {
                             while (result.next()) {
                                 City cityList = new City(
-                                        result.getInt("code"),
+                                        result.getInt("id"),
                                         result.getString("country"),
                                         result.getString("name"),
                                         result.getString("mayor"),
@@ -109,11 +109,11 @@ public class Main {
                     if (type == 1) {
                         var sax = new ParseSAX();
                         String content = "";
-                        System.out.print("Выберите содержимое поиска (code):\n");
+                        System.out.print("Выберите содержимое поиска (id):\n");
                         Scanner scanner = new Scanner(System.in);
                         content = scanner.nextLine();
                         var event = sax.searchSaxDocument(filePath, content);
-                        System.out.println(event != null ? event.toString() : "Такого события нет!");
+                        System.out.println(event != null ? event.toString() : "Такого города нет!");
                     } else
                     if (type == 2) {
                         var mySqlObj = new ParseSQL();
@@ -121,7 +121,7 @@ public class Main {
                         try {
                             while (result.next()) {
                                 City cityList = new City(
-                                        result.getInt("code"),
+                                        result.getInt("id"),
                                         result.getString("country"),
                                         result.getString("name"),
                                         result.getString("mayor"),
@@ -142,8 +142,8 @@ public class Main {
                         var sax = new ParseSAX();
                         var citiesList = sax.readerSaxDocument(filePath);
 
-                        var newEvent = set.setNewCity(citiesList.size());
-                        citiesList.add(newEvent);
+                        var newCity = set.setNewCity(citiesList.size());
+                        citiesList.add(newCity);
                         var dom = new ParseDOM(filePath);
                         dom.setDomNodes(citiesList);
                     } else if (type == 2) {
