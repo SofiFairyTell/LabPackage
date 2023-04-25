@@ -37,7 +37,7 @@ public class ParseSAX {
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             tag = qName;
             if (tag.equalsIgnoreCase("City"))
-                id = attributes.getValue("Code");
+                id = attributes.getValue("сode");
         }
 
         @Override
@@ -78,7 +78,7 @@ public class ParseSAX {
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             tag = qName;
             if (tag.equalsIgnoreCase("City"))
-                id = attributes.getValue("Code");
+                id = attributes.getValue("сode");
         }
 
         @Override

@@ -8,6 +8,7 @@ import LabFunctions.lab3.Truck;
 import LabFunctions.lab4.NameValidator;
 import LabFunctions.lab5.*;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -38,9 +39,13 @@ public class Main {
         SetData set = new SetData();
         var prop = new ParseProperties();
         var catalog = prop.readCatalogRoot();
-        String filePath =".."+ catalog + "\\file.xml";
+        File dir = new File(catalog);
+        if (!dir.exists()) {
+            dir.mkdirs();
+        }
+        String filePath = catalog + "\\file.xml";
         //создаим файл по умолчанию
-        filePath = Common.CreateDefaultXML(filePath);
+         filePath = Common.CreateDefaultXML(filePath);
         int type = choiceMenu();
         if (type == 3) {
             var sax = new ParseSAX();
