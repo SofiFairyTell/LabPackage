@@ -38,7 +38,7 @@ public class ParseSQL {
     }
 
     public void addNewRecord(City city) throws SQLException {
-        statement.executeUpdate("INSERT INTO public.citylist(code, country, name,mayor ,population , area , qualityOfLife)" +
+        statement.executeUpdate("INSERT INTO public.citylist(id, country, name,mayor ,population , area , qualityOfLife)" +
                 " VALUES ('" + city.getCode() + "','" + city.getCountry() + "','" + city.getName() + "','" + city.getMayor() + "', '"
                 + city.getPopulation() + "', '" + city.getArea() + "', " + "'" + city.getQualityOfLife() + "')");
     }
@@ -46,15 +46,15 @@ public class ParseSQL {
     public void updateRecord(int code) throws SQLException {
         SetData setData = new SetData();
         var strings = setData.setData();
-        statement.executeUpdate("update public.citylistset country = '" + strings[0] + "', name = '" + strings[1]
+        statement.executeUpdate("update public.citylist set country = '" + strings[0] + "', name = '" + strings[1]
                 + "', maoyr = '" + strings[2] + "', population = '" + strings[3] + "', area = '" + strings[4]
-                + "', qualityOfLife = '" + strings[5] + "' where code = " + code + ";");
+                + "', qualityOfLife = '" + strings[5] + "' where id = " + code + ";");
     }
 
     public void updateRecord(int code, City city) throws SQLException {
         statement.executeUpdate("UPDATE public.citylist set country = '" + city.getCountry() + "', name = '" + city.getName()
                 + "', mayor = '" + city.getMayor() + "', population = '" + city.getPopulation() + "', area = '" + city.getArea() +
-                "', qualityOfLife = '" + city.getQualityOfLife() + "' where code = " + code + ";");
+                "', qualityOfLife = '" + city.getQualityOfLife() + "' where id = " + code + ";");
     }
 
     public void deleteRecord(int id) throws SQLException {
