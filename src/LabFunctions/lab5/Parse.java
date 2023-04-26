@@ -32,7 +32,7 @@ public class Parse
             var result = sqlOBJ.getAll();
             while (result.next()) {
                 this.cityList.add(new City(
-                        result.getInt("code"),
+                        result.getInt("id"),
                         result.getString("country"),
                         result.getString("name"),
                         result.getString("mayor"),

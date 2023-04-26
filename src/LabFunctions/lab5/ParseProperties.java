@@ -45,7 +45,8 @@ public class ParseProperties
     public String errorDriver() {
         Properties prop = new Properties();
         try {
-            FileInputStream fis = new FileInputStream(propPath);
+            InputStream fis = getClass().getResourceAsStream(propPath);
+           // FileInputStream fis = new FileInputStream(propPath);
             prop.load(fis);
             return new String(prop.getProperty("errorDriver").getBytes("ISO8859-1"));
         } catch (IOException e) {
@@ -58,7 +59,8 @@ public class ParseProperties
     public String error() {
         Properties prop = new Properties();
         try {
-            FileInputStream fis = new FileInputStream(propPath);
+            InputStream fis = getClass().getResourceAsStream(propPath);
+            //FileInputStream fis = new FileInputStream(propPath);
             prop.load(fis);
             return new String(prop.getProperty("error").getBytes("ISO8859-1"));
         } catch (IOException e) {

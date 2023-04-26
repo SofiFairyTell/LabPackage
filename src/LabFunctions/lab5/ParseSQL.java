@@ -24,21 +24,21 @@ public class ParseSQL {
     }
 
     public ResultSet getAll() throws SQLException {
-        return this.statement.executeQuery("select * from cityList.City");
+        return this.statement.executeQuery("select * from public.citylist");
     }
 
     public ResultSet searchRecord(int id) throws SQLException {
-        return statement.executeQuery("select * from cityList.City where id in(" + id + ");");
+        return statement.executeQuery("select * from public.citylist where id in(" + id + ");");
     }
 
     public void addNewRecord(String[] strings) throws SQLException {
-        this.statement.executeUpdate("INSERT INTO cityList.City (country, name, mayor, population, area , qualityOfLife)" +
+        this.statement.executeUpdate("INSERT INTO public.citylist(country, name, mayor, population, area , qualityOfLife)" +
                 " VALUES ('" + strings[0] + "','" + strings[1] + "', '" + strings[2] + "', '" + strings[3] + "', " +
                 "'" + strings[4] + "','" + strings[5] + "')");
     }
 
     public void addNewRecord(City city) throws SQLException {
-        statement.executeUpdate("INSERT INTO cityList.City (code, country, name,mayor ,population , area , qualityOfLife)" +
+        statement.executeUpdate("INSERT INTO public.citylist(code, country, name,mayor ,population , area , qualityOfLife)" +
                 " VALUES ('" + city.getCode() + "','" + city.getCountry() + "','" + city.getName() + "','" + city.getMayor() + "', '"
                 + city.getPopulation() + "', '" + city.getArea() + "', " + "'" + city.getQualityOfLife() + "')");
     }
@@ -46,19 +46,19 @@ public class ParseSQL {
     public void updateRecord(int code) throws SQLException {
         SetData setData = new SetData();
         var strings = setData.setData();
-        statement.executeUpdate("update cityList.City set country = '" + strings[0] + "', name = '" + strings[1]
+        statement.executeUpdate("update public.citylistset country = '" + strings[0] + "', name = '" + strings[1]
                 + "', maoyr = '" + strings[2] + "', population = '" + strings[3] + "', area = '" + strings[4]
                 + "', qualityOfLife = '" + strings[5] + "' where code = " + code + ";");
     }
 
     public void updateRecord(int code, City city) throws SQLException {
-        statement.executeUpdate("UPDATE cityList.City set country = '" + city.getCountry() + "', name = '" + city.getName()
+        statement.executeUpdate("UPDATE public.citylist set country = '" + city.getCountry() + "', name = '" + city.getName()
                 + "', mayor = '" + city.getMayor() + "', population = '" + city.getPopulation() + "', area = '" + city.getArea() +
                 "', qualityOfLife = '" + city.getQualityOfLife() + "' where code = " + code + ";");
     }
 
     public void deleteRecord(int id) throws SQLException {
-        statement.executeUpdate("delete from cityList.City where id in(" + id + ");");
+        statement.executeUpdate("delete from public.citylist where id in(" + id + ");");
     }
 
     public ResultSet workDataBase(int action) {
