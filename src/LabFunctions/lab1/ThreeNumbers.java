@@ -10,6 +10,7 @@ import java.util.Scanner;
 public class ThreeNumbers {
     private int a, b, c;
 
+
     /**
      * Создает экземпляр класса ThreeNumbers.
      *
@@ -33,7 +34,7 @@ public class ThreeNumbers {
         return (a + b > 0) || (a + c > 0) || (b + c > 0);
     }
 
-    private static void checkNumbers(int a, int b, int c) {
+    public static void checkNumbers(int a, int b, int c) {
         ThreeNumbers tn = new ThreeNumbers(a, b, c);
 
         LoggerClass logger = new LoggerClass();
